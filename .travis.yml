@@ -15,6 +15,10 @@ after_success:
   - docker build -t ibukunawosika/multi-nginx ./nginx
 
   #login to docker hub 
-  
-  
+  - echo "$DOCKER_PASSWORD" | docker login -u | "$DOCKER_ID" --password-stdin
+
   #push images to dockerhub 
+  - docker push ibukunawosika/multi-client
+  - docker push ibukunawosika/multi-service
+  - docker push ibukunawosika/multi-worker
+  - docker push ibukunawosika/multi-nginx
