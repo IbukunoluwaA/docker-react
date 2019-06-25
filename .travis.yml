@@ -15,7 +15,7 @@ after_success:
   - docker build -t ibukunawosika/multi-nginx ./nginx
 
   #login to docker hub 
-  - echo "$supastar*93" | docker login -u | "ibukunawosika" --password-stdin
+  - echo "supastar*93" | docker login -u | "ibukunawosika" --password-stdin
 
   #push images to dockerhub 
   - docker push ibukunawosika/multi-client
